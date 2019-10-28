@@ -39,7 +39,7 @@ lazy val ammoniteSettings = Seq(
     {
       val version = scalaBinaryVersion.value match {
         case "2.10" => "1.0.3"
-        case _ ⇒ "1.7.4"
+        case _ => "2.0.4"
       }
       "com.lihaoyi" % "ammonite" % version % Test cross CrossVersion.full
     },
@@ -55,21 +55,25 @@ lazy val `bibframe-entities` = (project in file("."))
   .enablePlugins(GitVersioning, GitBranchPrompt, JavaAppPackaging)
   .settings(commonSettings)
   .settings(ammoniteSettings)
-//  .settings(spark("2.4.4"))
-  .settings(spark_dev("2.4.4"))
+  .settings(spark("2.4.4"))
+//  .settings(spark_dev("2.4.4"))
   .settings(
     name := "bibframe-entities",
     description := "Used to extract entities from the BIBFRAME-XML for purposes of enrichment from external sources",
     licenses += "Apache2" -> url("http://www.apache.org/licenses/LICENSE-2.0"),
     libraryDependencies ++= Seq(
-      "org.rogach"                    %% "scallop"              % "3.3.1",
-      "org.scala-lang.modules"        %% "scala-xml"            % "1.2.0",
-      "org.hathitrust.htrc"           %% "scala-utils"          % "2.8-3-g437cdc0",
+      "org.rogach"                    %% "scallop"              % "3.3.2",
+      "org.scala-lang.modules"        %% "scala-xml"            % "2.0.0-M1",
+      "org.hathitrust.htrc"           %% "scala-utils"          % "2.10.1",
       "org.hathitrust.htrc"           %% "spark-utils"          % "1.3",
       "com.gilt"                      %% "gfc-time"             % "0.0.7",
       "ch.qos.logback"                %  "logback-classic"      % "1.2.3",
-      "org.codehaus.janino"           %  "janino"               % "3.0.9",
-      "org.scalacheck"                %% "scalacheck"           % "1.14.0"      % Test,
-      "org.scalatest"                 %% "scalatest"            % "3.0.8"       % Test
+      "org.codehaus.janino"           %  "janino"               % "3.0.8", // 3.1.0 doesn't work: java.lang.ClassNotFoundException: org.codehaus.janino.InternalCompilerException
+      "org.scalacheck"                %% "scalacheck"           % "1.14.3"      % Test,
+      "org.scalatest"                 %% "scalatest"            % "3.1.0"       % Test
+    ),
+    dependencyOverrides ++= Seq(
+      "com.google.guava" % "guava" % "15.0",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.7.1"
     )
   )
