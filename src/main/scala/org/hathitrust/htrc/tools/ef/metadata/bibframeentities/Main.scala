@@ -18,7 +18,6 @@ object Main {
     val conf = new Conf(args)
     val inputPath = conf.inputPath().toString
     val outputPath = conf.outputPath().toString
-    val numPartitions = conf.numPartitions.toOption
 
     conf.outputPath().mkdirs()
 
@@ -39,17 +38,16 @@ object Main {
 
     implicit val sc: SparkContext = spark.sparkContext
 
+    val numPartitions = conf.numPartitions.getOrElse(sc.defaultMinPartitions)
+
     logger.info("Starting...")
 
     // record start time
     val t0 = System.nanoTime()
 
     val xmlParseErrorAccumulator = new ErrorAccumulator[(String, String), String](_._1)
-    val bibframeXmlRDD =
-      (numPartitions match {
-        case Some(n) => sc.sequenceFile[String, String](inputPath, minPartitions = n)
-        case None => sc.sequenceFile[String, String](inputPath)
-      })
+    val bibframeXmlRDD = sc
+      .sequenceFile[String, String](inputPath, minPartitions = numPartitions)
       .tryMapValues(XML.loadString)(xmlParseErrorAccumulator)
 
     val extractEntitiesErrorAccumulator = new ErrorAccumulator[(String, Elem), String](_._1)
