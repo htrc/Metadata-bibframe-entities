@@ -1,6 +1,6 @@
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/htrc/Metadata-marcjson2bibframexml/ci.yml?branch=main)](https://github.com/htrc/HTRC-FeatureExtractor/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/github/htrc/Metadata-marcjson2bibframexml/graph/badge.svg?token=U7QSqR9yri)](https://codecov.io/github/htrc/Metadata-marcjson2bibframexml)
-[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/htrc/Metadata-marcjson2bibframexml?include_prereleases&sort=semver)](https://github.com/htrc/Metadata-marcjson2bibframexml/releases/latest)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/htrc/Metadata-bibframe-entities/ci.yml?branch=main)](https://github.com/htrc/Metadata-bibframe-entities/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/github/htrc/Metadata-bibframe-entities/graph/badge.svg?token=2y6GAtWfnP)](https://codecov.io/github/htrc/Metadata-bibframe-entities)
+[![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/htrc/Metadata-bibframe-entities?include_prereleases&sort=semver)](https://github.com/htrc/Metadata-bibframe-entities/releases/latest)
 
 # Metadata-bibframe-entities
 Used to extract entities from the BIBFRAME-XML for purposes of enrichment from external sources
