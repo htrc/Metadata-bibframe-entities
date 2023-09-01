@@ -47,6 +47,8 @@ object Main {
       // record start time
       val t0 = System.nanoTime()
 
+      conf.outputPath().mkdirs()
+
       val xmlParseErrorAccumulator = new ErrorAccumulator[(String, String), String](_._1)(sc)
       val bibframeXmlRDD = sc
         .sequenceFile[String, String](inputPath, minPartitions = numPartitions)
