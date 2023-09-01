@@ -66,7 +66,7 @@ lazy val `bibframe-entities` = (project in file("."))
       "org.rogach"                    %% "scallop"              % "5.0.0",
       "org.scala-lang.modules"        %% "scala-xml"            % "2.2.0",
       "org.hathitrust.htrc"           %% "scala-utils"          % "2.14.4",
-      "org.hathitrust.htrc"           %% "spark-utils"          % "1.5.3",
+      "org.hathitrust.htrc"           %% "spark-utils"          % "1.5.4",
       "com.github.nscala-time"        %% "nscala-time"          % "2.32.0",
       "ch.qos.logback"                %  "logback-classic"      % "1.3.11",  // 1.3.x is for Java8, 1.4.x for Java11
       "org.codehaus.janino"           %  "janino"               % "3.1.10",
