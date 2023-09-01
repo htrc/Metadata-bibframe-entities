@@ -56,7 +56,7 @@ lazy val ammoniteSettings = Seq(
 lazy val `bibframe-entities` = (project in file("."))
   .enablePlugins(GitVersioning, GitBranchPrompt, JavaAppPackaging)
   .settings(ammoniteSettings)
-  //  .settings(spark("3.4.1"))
+//    .settings(spark("3.4.1"))
   .settings(spark_dev("3.4.1"))
   .settings(
     name := "bibframe-entities",
