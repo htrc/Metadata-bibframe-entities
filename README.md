@@ -1,4 +1,4 @@
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/htrc/Metadata-bibframe-entities/ci.yml?branch=main)](https://github.com/htrc/Metadata-bibframe-entities/actions/workflows/ci.yml)
+[![Scala CI](https://github.com/htrc/Metadata-bibframe-entities/actions/workflows/ci.yml/badge.svg)](https://github.com/htrc/Metadata-bibframe-entities/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/github/htrc/Metadata-bibframe-entities/graph/badge.svg?token=2y6GAtWfnP)](https://codecov.io/github/htrc/Metadata-bibframe-entities)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/htrc/Metadata-bibframe-entities?include_prereleases&sort=semver)](https://github.com/htrc/Metadata-bibframe-entities/releases/latest)
 
